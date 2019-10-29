@@ -19,7 +19,7 @@ from gem.utils import graph_util, plot_util
 from gem.evaluation import visualize_embedding as viz
 from .sdne_utils import *
 
-from keras.layers import Input, Dense, Lambda, merge
+from tensorflow.keras.layers import Input, Dense, Lambda, Subtract
 from tensorflow.keras.models import Model, model_from_json
 import tensorflow.keras.regularizers as Reg
 from tensorflow.keras.optimizers import SGD, Adam
