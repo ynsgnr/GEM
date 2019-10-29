@@ -89,7 +89,7 @@ class node2vec(StaticGraphEmbedding):
         return self._X
 
     def get_edge_weight(self, i, j):
-        return np.dot(self._X[i, :], self._X[j, :])
+        return np.dot(self._X[i, 1:], self._X[j, 1:])
 
     def get_reconstructed_adj(self, X=None, node_l=None):
         if X is not None:

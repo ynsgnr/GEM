@@ -163,11 +163,11 @@ def loadGraphFromEdgeListTxt(file_name, directed=True):
 def loadEmbedding(file_name):
     with open(file_name, 'r') as f:
         n, d = f.readline().strip().split()
-        X = np.zeros((int(n), int(d)))
+        X = np.zeros((int(n), int(d)+1))
+        i = 0
         for line in f:
-            emb = line.strip().split()
-            emb_fl = [float(emb_i) for emb_i in emb[1:]]
-            X[int(emb[0]), :] = emb_fl
+            X[i] = [float(emb_i) for emb_i in line.strip().split()]
+            i+=1
     return X
 
 
