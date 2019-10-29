@@ -166,9 +166,11 @@ def loadEmbedding(file_name):
         X = np.zeros((int(n), int(d)+1))
         i = 0
         for line in f:
-            X[i] = [float(emb_i) for emb_i in line.strip().split()]
-            i+=1
-    return X
+            l = [float(emb_i) for emb_i in line.strip().split()]
+            if(l[0]!=0):
+                X[i]=l
+                i+=1
+    return X[:i]
 
 
 def loadSBMGraph(file_prefix):
