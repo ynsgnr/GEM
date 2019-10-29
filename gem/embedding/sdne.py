@@ -20,10 +20,10 @@ from gem.evaluation import visualize_embedding as viz
 from .sdne_utils import *
 
 from keras.layers import Input, Dense, Lambda, merge
-from keras.models import Model, model_from_json
-import keras.regularizers as Reg
-from keras.optimizers import SGD, Adam
-from keras import backend as KBack
+from tensorflow.keras.models import Model, model_from_json
+import tensorflow.keras.regularizers as Reg
+from tensorflow.keras.optimizers import SGD, Adam
+from tensorflow.keras import backend as KBack
 
 from time import time
 

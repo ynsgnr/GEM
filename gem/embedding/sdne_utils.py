@@ -1,8 +1,8 @@
 import numpy as np
 
-from keras.layers import Input, Dense
-from keras.models import Model, model_from_json
-import keras.regularizers as Reg
+from tensorflow.keras.layers import Input, Dense
+from tensorflow.keras.models import Model, model_from_json
+import tensorflow.keras.regularizers as Reg
 
 
 def model_batch_predictor(model, X, batch_size):
