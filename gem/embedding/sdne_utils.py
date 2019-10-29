@@ -72,7 +72,7 @@ def get_encoder(node_num, d, K, n_units, nu1, nu2, activation_fn):
     y[K] = Dense(d, activation=activation_fn,
                  kernel_regularizer =Reg.l1_l2(l1=nu1, l2=nu2))(y[K - 1])
     # Encoder model
-    encoder = Model(input=x, output=y[K])
+    encoder = Model(inputs=x, outputs=y[K])
     return encoder
 
 
@@ -93,7 +93,7 @@ def get_decoder(node_num, d, K,
     # Output
     x_hat = y_hat[0]  # decoder's output is also the actual output
     # Decoder Model
-    decoder = Model(input=y, output=x_hat)
+    decoder = Model(inputs=y, outputs=x_hat)
     return decoder
 
 
@@ -105,7 +105,7 @@ def get_autoencoder(encoder, decoder):
     # Generate reconstruction
     x_hat = decoder(y)
     # Autoencoder Model
-    autoencoder = Model(input=x, output=[x_hat, y])
+    autoencoder = Model(inputs=x, outputs=[x_hat, y])
     return autoencoder
 
 
