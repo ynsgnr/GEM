@@ -57,10 +57,7 @@ class node2vec(StaticGraphEmbedding):
 
     def learn_embedding(self, graph=None, edge_f=None,
                         is_weighted=False, no_python=False):
-        if sys.platform[0] == "w":
-            args = ["gem/c_exe/gf.exe"]
-        else:
-            args = ["gem/c_exe/gf"]
+        args = ["node2vec"]
         if not graph and not edge_f:
             raise Exception('graph/edge_f needed')
         if edge_f:

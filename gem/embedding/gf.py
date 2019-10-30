@@ -90,10 +90,7 @@ class GraphFactorization(StaticGraphEmbedding):
         if not graph and not edge_f:
             raise Exception('graph/edge_f needed')
         if no_python:
-            if sys.platform[0] == "w":
-                args = ["gem/c_exe/gf.exe"]
-            else:
-                args = ["gem/c_exe/gf"]
+            args = ["gf.exe"]
             if not graph and not edge_f:
                 raise Exception('graph/edge_f needed')
             if edge_f:
