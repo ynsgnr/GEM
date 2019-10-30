@@ -68,7 +68,7 @@ def get_encoder(node_num, d, K, n_units, nu1, nu2, activation_fn):
     y[0] = x  # y[0] is assigned the input
     for i in range(K - 1):
         y[i + 1] = Dense(n_units[i], activation=activation_fn,
-                         kernel_regularizer =Reg.l1_l2(l1=nu1, l2=nu2))(y[i])
+                         kernel_regularizer=Reg.l1_l2(l1=nu1, l2=nu2))(y[i])
     y[K] = Dense(d, activation=activation_fn,
                  kernel_regularizer =Reg.l1_l2(l1=nu1, l2=nu2))(y[K - 1])
     # Encoder model

@@ -148,8 +148,9 @@ class SDNE(StaticGraphEmbedding):
             loss_weights=[1, 1, self._alpha]
         )
 
+        gen = batch_generator_sdne(S, self._beta, self._n_batch, True)
         self._model.fit_generator(
-            generator=batch_generator_sdne(S, self._beta, self._n_batch, True),
+            generator=gen,
             epochs=self._num_iter,
             steps_per_epoch=S.nonzero()[0].shape[0] // self._n_batch,
             verbose=1
