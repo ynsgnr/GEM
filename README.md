@@ -64,6 +64,15 @@ You also can use `python3` instead of `python`.
 To install node2vec as part of the package, recompile from https://github.com/snap-stanford/snap and add node2vec executable to system path.
 To grant executable permission, run: chmod +x node2vec
 
+## Using Tensorflow
+If you want to use tensorflow matrix functions (norm,mean,std,dot) import tensorflow from utils after importing everything else. Be careful it is supposed to be the last import since it overrites numpy functions
+
+```python 
+    from gem.embedding.sdne import SDNE
+    from gem.utils import graph_util
+    from gem.utils import tensorflow #Last Import overrides numpy functions
+```
+
 ## Usage
 ### Example 1
 Run the methods on Karate graph and evaluate them on graph reconstruction and visualization. The data is located in examples/data. The example can be run from examples folder as python test_karate.py -node2vec 0 (use -node2vec 1 to also run node2vec model):

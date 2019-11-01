@@ -11,3 +11,8 @@ def mean(matrix):
 
 def std(matrix):
     return tf.reduce_std(tf.convert_to_tensor(matrix, dtype=tf.float32)).numpy()
+
+import numpy as np
+np.linalg.norm = linalg_norm
+np.mean = mean
+np.std = std
