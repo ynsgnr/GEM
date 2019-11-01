@@ -24,7 +24,7 @@ INSTALL_REQUIRES = (
     'networkx==1.11',
     'matplotlib>=2.0.0',
     'scikit-learn>=0.21.2',
-    'tensorflow==2.0.0'
+    'tensorflow==2.0.0',
     'keras==2.3.1'
 )
 

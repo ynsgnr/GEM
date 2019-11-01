@@ -4,7 +4,8 @@ from gem.evaluation import metrics
 from gem.utils import evaluation_util, graph_util
 import networkx as nx
 import numpy as np
-
+from ..utils.tensorflow_util import linalg_norm
+np.linalg.norm = linalg_norm
 
 def evaluateStaticGraphReconstruction(digraph, graph_embedding,
                                       X_stat, node_l=None, file_suffix=None,

@@ -1,4 +1,6 @@
 import numpy as np
+from .tensorflow_util import dot
+np.dot = dot
 
 def reorient(embed1, embed2):
     assert embed1.shape[1] == embed2.shape[1], ('Embedding dimension should be the same for both embeddings')
