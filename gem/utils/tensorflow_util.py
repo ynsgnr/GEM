@@ -3,9 +3,9 @@ import tensorflow as tf
 def dot(left,right):
     l = tf.convert_to_tensor(left, dtype=tf.float32)
     r = tf.convert_to_tensor(right, dtype=tf.float32)
-    return tf.matmul(l,r)
+    return tf.matmul(l,r).numpy()
 
-def linalg_norm(matrix):
+def linalg_norm(matrix,ord='fro'):
     m = tf.convert_to_tensor(matrix, dtype=tf.float32)
-    return tf.norm(m)
+    return tf.norm(m,ord=ord).numpy()
     
