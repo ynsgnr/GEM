@@ -36,8 +36,7 @@ def batch_generator_sdne(X, beta, batch_size, shuffle):
     if shuffle:
         np.random.shuffle(sample_index)
     while True:
-        batch_index = \
-            sample_index[batch_size * counter:batch_size * (counter + 1)]
+        batch_index = sample_index[batch_size * counter:batch_size * (counter + 1)]
         X_batch_v_i = X[row_indices[batch_index], :].toarray()
         X_batch_v_j = X[col_indices[batch_index], :].toarray()
         InData = np.append(X_batch_v_i, X_batch_v_j, axis=1)
@@ -53,7 +52,7 @@ def batch_generator_sdne(X, beta, batch_size, shuffle):
         a2 = np.append(B_j, deg_j, axis=1)
         OutData = [a1, a2, X_ij.T]
         counter += 1
-        yield InData, OutData
+        yield (InData, OutData)
         if (counter == number_of_batches):
             if shuffle:
                 np.random.shuffle(sample_index)

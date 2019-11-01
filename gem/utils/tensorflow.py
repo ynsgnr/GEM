@@ -12,7 +12,11 @@ def mean(matrix):
 def std(matrix):
     return tf.reduce_std(tf.convert_to_tensor(matrix, dtype=tf.float32)).numpy()
 
+def tf_sum(matrix):
+    return tf.reduce_sum(tf.convert_to_tensor(matrix, dtype=tf.float32)).numpy()
+
 import numpy as np
 np.linalg.norm = linalg_norm
 np.mean = mean
 np.std = std
+np.sum = tf_sum
