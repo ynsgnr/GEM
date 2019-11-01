@@ -298,6 +298,9 @@ We observe that SDNE can reconstruct SBM network with high MAP and precision. Am
 <img width="420" height="300" src="images/sbm_sdne.png">
 </p>
 
+## Versions
+  This branch is the vanilla version (uses no optimization just fixes)
+
 ## Cite
     @article{goyal2017graph,
         title = "Graph embedding techniques, applications, and performance: A survey",
