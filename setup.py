@@ -21,11 +21,11 @@ ISRELEASED = True
 INSTALL_REQUIRES = (
     'numpy>=1.12.0',
     'scipy>=0.19.0',
-    'networkx==1.11',
+    'networkx>=2.4',
     'matplotlib>=2.0.0',
     'scikit-learn>=0.21.2',
-    'tensorflow==2.0.0',
-    'keras==2.3.1'
+    'tensorflow>=2.0.0',
+    'keras>=2.3.1'
 )
 
 
