@@ -46,8 +46,8 @@ def batch_generator_sdne(X, beta, batch_size, shuffle):
         B_j = np.ones(X_batch_v_j.shape)
         B_j[X_batch_v_j != 0] = beta
         X_ij = X[row_indices[batch_index], col_indices[batch_index]]
-        deg_i = np.sum(X_batch_v_i != 0, 1).reshape((batch_size, 1))
-        deg_j = np.sum(X_batch_v_j != 0, 1).reshape((batch_size, 1))
+        deg_i = np.sum(X_batch_v_i != 0, axis=1).reshape((batch_size, 1))
+        deg_j = np.sum(X_batch_v_j != 0, axis=1).reshape((batch_size, 1))
         a1 = np.append(B_i, deg_i, axis=1)
         a2 = np.append(B_j, deg_j, axis=1)
         OutData = [a1, a2, X_ij.T]
