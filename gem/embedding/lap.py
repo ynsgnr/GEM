@@ -57,7 +57,7 @@ class LaplacianEigenmaps(StaticGraphEmbedding):
         t1 = time()
         L_sym = nx.normalized_laplacian_matrix(graph)
 
-        w, v = lg.eigs(L_sym, k=self._d + 1, which='SM')
+        w, v = lg.eigs(L_sym, k=int(self._d + 1), which='SM')
         t2 = time()
         self._X = v[:, 1:]
 
